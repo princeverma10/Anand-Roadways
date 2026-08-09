@@ -1,0 +1,177 @@
+/* ==========================================
+   ANAND ROADWAYS — EDITORIAL BASE STYLES
+   (Mobile Responsive Refinements)
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--clr-dark-bg);
+  color: var(--clr-text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--clr-amber);
+  outline-offset: 3px;
+}
+
+/* Editorial Typography Hierarchy with Fluid Mobile Scaling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  font-weight: var(--fw-black);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-size: clamp(2.2rem, 8.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  word-wrap: break-word;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 5.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 3.8vw, 1.8rem);
+}
+
+p {
+  color: var(--clr-text-light-muted);
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+}
+
+/* Editorial Label */
+.editorial-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(0.7rem, 2vw, 0.75rem);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--clr-amber);
+  margin-bottom: 0.85rem;
+}
+
+.editorial-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--clr-amber);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Container & Layout with Strict Mobile Side Padding */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem; /* 20px on mobile */
+  padding-right: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem; /* 16px on small mobile */
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+.section-header-editorial {
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .section-header-editorial {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.section-header-editorial.light p {
+  color: var(--clr-text-muted);
+}
+
+/* Reduced Motion Fallback */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
